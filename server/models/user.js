@@ -8,6 +8,7 @@ const userSchema = new mongoose.Schema({
 	lastName: { type: String, required: true },
 	email: { type: String, required: true },
 	password: { type: String, required: true },
+	verified: { type: Boolean, default: false },
 });
 
 userSchema.methods.generateAuthToken = function () {
@@ -17,7 +18,7 @@ userSchema.methods.generateAuthToken = function () {
 	return token;
 };
 
-const User = mongoose.model("auth", userSchema);
+const User = mongoose.model("user", userSchema);
 
 const validate = (data) => {
 	const schema = Joi.object({

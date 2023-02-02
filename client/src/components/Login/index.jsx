@@ -44,6 +44,7 @@ const Login = () => {
 							required
 							className={styles.input}
 						/>
+					 <br/> 	
 						<input
 							type="password"
 							placeholder="Password"
@@ -53,7 +54,13 @@ const Login = () => {
 							required
 							className={styles.input}
 						/>
+						<br/>
+						<Link to="/forgot-password" style={{ alignSelf: "flex-start" }}>
+							<p style={{ padding: "0 15px" }}>Forgot Password ?</p>
+						</Link>
+						<br/>
 						{error && <div className={styles.error_msg}>{error}</div>}
+						<br/>
 						<button type="submit" className={styles.green_btn}>
 							Sing In
 						</button>
